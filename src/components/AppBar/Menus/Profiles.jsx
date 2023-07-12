@@ -25,56 +25,56 @@ function Profiles() {
 
     return (
         <Box>
-            <div>
-                <Tooltip title="Account settings">
-                    <IconButton
-                        onClick={handleClick}
-                        size="small"
-                        sx={{ padding: 0 }}
-                        aria-controls={open ? 'basic-menu-profiles' : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? 'true' : undefined}
-                    >
-                        <Avatar sx={{ width: 34, height: 34 }} src={myAvatar} alt='Minh Nghia avatar' />
-                    </IconButton>
-                </Tooltip>
-                <Menu
-                    id="basic-menu-profiles"
-                    MenuListProps={{
-                        'aria-labelledby': 'basic-button-profiles'
-                    }}
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    TransitionComponent={Fade}
+
+            <Tooltip title="Account settings">
+                <IconButton
+                    onClick={handleClick}
+                    size="small"
+                    sx={{ padding: 0 }}
+                    aria-controls={open ? 'basic-menu-profiles' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
                 >
-                    <MenuItem>
-                        <Avatar sx={{ width: '28px', height: '28px', mr: 2 }} /> Profile
-                    </MenuItem>
-                    <MenuItem>
-                        <Avatar sx={{ width: '28px', height: '28px', mr: 2 }} /> My account
-                    </MenuItem>
-                    <Divider />
-                    <MenuItem>
-                        <ListItemIcon>
-                            <PersonAdd fontSize="small" />
-                        </ListItemIcon>
-                        Add another account
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemIcon>
-                            <Settings fontSize="small" />
-                        </ListItemIcon>
-                        Settings
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemIcon>
-                            <Logout fontSize="small" />
-                        </ListItemIcon>
-                        Logout
-                    </MenuItem>
-                </Menu>
-            </div>
+                    <Avatar sx={{ width: 36, height: 36 }} src={myAvatar} alt='Minh Nghia avatar' />
+                </IconButton>
+            </Tooltip>
+            <Menu
+                id="basic-menu-profiles"
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button-profiles'
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+            >
+                <MenuItem>
+                    <Avatar sx={{ width: '28px', height: '28px', mr: 2 }} /> Profile
+                </MenuItem>
+                <MenuItem>
+                    <Avatar sx={{ width: '28px', height: '28px', mr: 2 }} /> My account
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                    <ListItemIcon>
+                        <PersonAdd fontSize="small" />
+                    </ListItemIcon>
+                    Add another account
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <Settings fontSize="small" />
+                    </ListItemIcon>
+                    Settings
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <Logout fontSize="small" />
+                    </ListItemIcon>
+                    Logout
+                </MenuItem>
+            </Menu>
+
         </Box>
     )
 }

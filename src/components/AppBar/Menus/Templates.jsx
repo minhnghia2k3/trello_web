@@ -22,55 +22,54 @@ function Templates() {
 
     return (
         <Box>
-            <div>
-                <Button
-                    id="basic-button-templates"
-                    aria-controls={open ? 'basic-menu-templates' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick}
-                    endIcon={<ExpandMoreIcon />}
-                >
-                    Templates
-                </Button>
-                <Menu
-                    id="basic-menu-templates"
-                    MenuListProps={{
-                        'aria-labelledby': 'basic-button-templates'
-                    }}
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    TransitionComponent={Fade}
-                >
-                    <MenuItem>
-                        <ListItemText inset>Single</ListItemText>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemText inset>1.15</ListItemText>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemText inset>Double</ListItemText>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemIcon>
-                            <Check />
-                        </ListItemIcon>
-                        Custom: 1.2
-                    </MenuItem>
-                    <Divider />
-                    <MenuItem>
-                        <ListItemText>Add space before paragraph</ListItemText>
-                    </MenuItem>
-                    <MenuItem>
-                        <ListItemText>Add space after paragraph</ListItemText>
-                    </MenuItem>
-                    <Divider />
-                    <MenuItem>
-                        <ListItemText>Custom spacing...</ListItemText>
-                    </MenuItem>
-                </Menu>
-            </div>
+            <Button
+                sx={{ color: 'white' }}
+                id="basic-button-templates"
+                aria-controls={open ? 'basic-menu-templates' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                endIcon={<ExpandMoreIcon />}
+            >
+                Templates
+            </Button>
+            <Menu
+                id="basic-menu-templates"
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button-templates'
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+            >
+                <MenuItem>
+                    <ListItemText inset>Single</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                    <ListItemText inset>1.15</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                    <ListItemText inset>Double</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <Check />
+                    </ListItemIcon>
+                    Custom: 1.2
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                    <ListItemText>Add space before paragraph</ListItemText>
+                </MenuItem>
+                <MenuItem>
+                    <ListItemText>Add space after paragraph</ListItemText>
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                    <ListItemText>Custom spacing...</ListItemText>
+                </MenuItem>
+            </Menu>
         </Box>
     )
 }

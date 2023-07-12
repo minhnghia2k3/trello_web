@@ -1,6 +1,5 @@
 // import { createTheme } from '@mui/material/styles'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
-import { pink } from '@mui/material/colors'
 
 // Create a theme instance.
 const theme = extendTheme({
@@ -10,20 +9,10 @@ const theme = extendTheme({
     },
 
     colorSchemes: {
-        light: {
-            palette: {
-                primary: {
-                    main: pink[600]
-                }
-            }
-        },
-        dark: {
-            palette: {
-                primary: {
-                    main: pink[400]
-                }
-            }
-        }
+        // light: {
+        // },
+        // dark: {
+        // }
     },
 
     components: {
@@ -55,8 +44,11 @@ const theme = extendTheme({
             styleOverrides: {
                 root: ({ theme }) => {
                     return {
-                        color: theme.palette.primary.main,
-                        fontSize: '0.875rem'
+                        fontSize: '0.875rem',
+                        borderWidth: '0.5px !important',
+                        '&:hover': {
+                            borderWidth: '1px !important'
+                        }
                     }
                 }
             }
@@ -65,16 +57,10 @@ const theme = extendTheme({
             styleOverrides: {
                 root: ({ theme }) => {
                     return {
-                        color: theme.palette.primary.main,
                         fontSize: '0.875rem',
-                        '.MuiOutlinedInput-notchedOutline': {
-                            borderColor: theme.palette.primary.light
-                        },
-                        '&:hover': {
-                            '.MuiOutlinedInput-notchedOutline': {
-                                borderColor: theme.palette.primary.main
-                            }
-                        }
+                        '& fieldset': { borderWidth: '0.5px !important' },
+                        '&:hover fieldset': { borderWidth: '1px !important' },
+                        '&.Mui-focused fieldset': { borderWidth: '1px !important' }
                     }
                 }
             }
