@@ -20,7 +20,7 @@ import Tooltip from '@mui/material/Tooltip'
 function AppBar() {
     return (
         <Box px={2} sx={{
-            width: '100%', display: 'flex', alignItems: 'center', height: (theme) => theme.trello.appBarHeight, justifyContent: 'space-between'
+            width: '100%', display: 'flex', gap: 2, alignItems: 'center', overflowX: 'auto', height: (theme) => theme.trello.appBarHeight, justifyContent: 'space-between'
         }}>
             <Box
                 sx={{
@@ -40,11 +40,13 @@ function AppBar() {
                     }}>
                     <SvgIcon component={TrelloIcon} fontSize='small' inheritViewBox sx={{ color: 'primary.main' }} />
                     <Typography variant='span' sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'primary.main' }}>Trello</Typography>
-                    <WorkSpaces />
-                    <Recent />
-                    <Star />
-                    <Templates />
-                    <Button variant='outlined'>Create</Button>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
+                        <WorkSpaces />
+                        <Recent />
+                        <Star />
+                        <Templates />
+                        <Button variant='outlined'>Create</Button>
+                    </Box>
 
                 </Box>
             </Box>
@@ -54,7 +56,7 @@ function AppBar() {
                 alignItems: 'center',
                 gap: 2
             }}>
-                <TextField id='outlined-search' label='Search...' type='search' size='small' />
+                <TextField id='outlined-search' label='Search...' type='search' size='small' sx={{ minWidth: '120px' }} />
                 <ModeSelect />
                 <Tooltip title='Notifications'>
                     <Badge color='secondary' variant='dot' sx={{ cursor: 'pointer' }}>
