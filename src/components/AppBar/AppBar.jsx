@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import ModeSelect from '~/components/ModeSelect'
+import ModeSelect from '~/components/ModeSelect/ModeSelect'
 import WorkSpaces from './Menus/WorkSpaces'
 import Recent from './Menus/Recent'
 import Star from './Menus/Starred'
