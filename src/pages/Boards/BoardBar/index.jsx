@@ -82,17 +82,40 @@ function BoardBar() {
                     }}
                 >Create</Button>
                 <AvatarGroup
-                    max={4}
+                    max={7}
                     sx={{
                         gap: '10px',
                         '& .MuiAvatar-root': {
                             width: '34px',
                             height: '34px',
                             fontSize: '16px',
-                            border: 'none'
+                            border: 'none',
+                            color: 'white',
+                            cursor: 'pointer',
+                            '&:first-of-type': {
+                                bgcolor: '#a4b0be'
+                            }
                         }
                     }}
                 >
+                    <Tooltip title="minhnghia2k3">
+                        <Avatar
+                            alt="Minh Nghia"
+                            src='https://github.com/minhnghia2k3/trello_web/blob/master/src/assets/avatar.jpeg?raw=true'
+                        />
+                    </Tooltip>
+                    <Tooltip title="minhnghia2k3">
+                        <Avatar
+                            alt="Minh Nghia"
+                            src='https://github.com/minhnghia2k3/trello_web/blob/master/src/assets/avatar.jpeg?raw=true'
+                        />
+                    </Tooltip>
+                    <Tooltip title="minhnghia2k3">
+                        <Avatar
+                            alt="Minh Nghia"
+                            src='https://github.com/minhnghia2k3/trello_web/blob/master/src/assets/avatar.jpeg?raw=true'
+                        />
+                    </Tooltip>
                     <Tooltip title="minhnghia2k3">
                         <Avatar
                             alt="Minh Nghia"
