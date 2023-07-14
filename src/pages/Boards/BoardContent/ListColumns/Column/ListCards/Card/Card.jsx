@@ -2,37 +2,29 @@ import { Card as MuiCard } from '@mui/material'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import myAvatar from '~/assets/avatar.jpeg'
 import GroupIcon from '@mui/icons-material/Group'
 import ModeCommentIcon from '@mui/icons-material/ModeComment'
 import AttachmentIcon from '@mui/icons-material/Attachment'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
-function Card({ temporaryHideMedia }) {
-    if (temporaryHideMedia) {
-        return (
-            <>
-                <MuiCard sx={{ cursor: 'pointer', boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)', overflow: 'unset' }}>
-                    <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}><Typography>Card test 01</Typography></CardContent>
-                </MuiCard>
-            </>
-        )
+
+function Card({ card }) {
+    const showCardActions = () => {
+        return card?.memberIds?.length > 0 || card?.comments?.length > 0 || card?.attachments?.length > 0
     }
     return (
         <>
             <MuiCard sx={{ cursor: 'pointer', boxShadow: '0 1px 1px rgba(0, 0, 0, 0.2)', overflow: 'unset' }}>
-                <CardMedia
-                    sx={{ height: 140 }}
-                    image={myAvatar}
-                    title="my avatar"
-                />
-                <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}><Typography>Minhnghia2k3 MERN Stack</Typography></CardContent>
-                <CardActions sx={{ p: '0 4px 8px 4px' }}>
-                    <Button size="small" startIcon={<GroupIcon />}>20</Button>
-                    <Button size="small" startIcon={<ModeCommentIcon />}>15</Button>
-                    <Button size="small" startIcon={<AttachmentIcon />}>10</Button>
-                </CardActions>
+                {card?.cover && <CardMedia sx={{ height: 140 }} image={card?.cover} />}
+                <CardContent sx={{ p: 1.5, '&:last-child': { p: 1.5 } }}><Typography>{card?.title}</Typography></CardContent>
+                {showCardActions() && <CardActions sx={{ p: '0 4px 8px 4px' }}>
+                    {/* null?.length == false/true */}
+                    {card?.memberIds?.length > 0 && <Button size="small" startIcon={<GroupIcon />}>{card?.memberIds?.length}</Button>}
+                    {card?.comments?.length > 0 && <Button size="small" startIcon={<ModeCommentIcon />}>{card?.comments?.length}</Button>}
+                    {card?.attachments?.length > 0 && <Button size="small" startIcon={<AttachmentIcon />}>{card?.attachments?.length}</Button>}
+                </CardActions>}
+
             </MuiCard>
         </>
     )
