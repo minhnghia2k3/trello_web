@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import NoteAddIcon from '@mui/icons-material/NoteAdd'
 
 
-function ListColumns() {
+function ListColumns({ columns }) {
     return (
         // /* Board scroll bar */
         <Box sx={{
@@ -16,10 +16,9 @@ function ListColumns() {
             overflowY: 'hidden'
         }
         }>
-            <Column />
-            <Column />
-            <Column />
-            <Column />
+            {columns && columns.map(column => <Column key={column._id} column={column} />)}
+
+
 
             {/* Add Column */}
             <Box sx={{
