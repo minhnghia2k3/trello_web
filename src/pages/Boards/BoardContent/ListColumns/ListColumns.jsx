@@ -5,9 +5,10 @@ import NoteAddIcon from '@mui/icons-material/NoteAdd'
 import { SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable'
 
 function ListColumns({ columns }) {
+    const arrayColumnIds = columns?.map(c => c._id)
     return (
         // {columns} must be array [1,2,3]
-        <SortableContext items={columns?.map(c => c._id)} strategy={horizontalListSortingStrategy}>
+        <SortableContext items={arrayColumnIds} strategy={horizontalListSortingStrategy}>
             <Box sx={{
                 bgcolor: 'inherit',
                 width: '100%',
